@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,15 +17,11 @@
 				<nav id="navSup">
 					<span id="areaLogo">
 						<span>
-							<img src="logo.jpg" alt="" id="logo" />
+							<img src="logo.png" alt="" id="logo" />
 						</span>
 						<span>
 							<h3>FinanceMate</h3>
 						</span>
-					</span>
-					<span id="menus">
-						<span id="Perfil"> <a href="perfil.html">Perfil</a> </span>
-						<span id="Sair"> <a href="cadastroLogin.html">Sair</a> </span>
 					</span>
 				</nav>
 			</div>
@@ -36,104 +32,71 @@
 				<aside id="sidebar">
 					<div class="profile">
 						<img src="https://via.placeholder.com/80" alt="Perfil" class="profile-pic" />
-						<h3>Pedro Mota</h3>
+						<h3>Bem-vindo</h3>
 						<p id="hora"></p>
 						<p id="periodo"></p>
 					</div>
 					<ul class="menu">
-						<li>
-							<i class="fas fa-home"></i>
-							<span>Início</span>
-						</li>
-						<li>
-							<i class="fas fa-chart-bar"></i>
-							<span>Relatórios</span>
-							<i class="fas fa-chevron-down submenu-toggle"></i>
-							<ul class="submenu">
-								<li>Relatório 1</li>
-								<li>Relatório 2</li>
-							</ul>
-						</li>
-						<li>
-							<i class="fas fa-calendar-alt"></i>
-							<span>Agendamento</span>
-							<i class="fas fa-chevron-down submenu-toggle"></i>
-							<ul class="submenu">
-								<li>Agendar</li>
-								<li>Ver Agenda</li>
-							</ul>
-						</li>
-						<li>
-							<i class="fas fa-credit-card"></i>
-							<span>Cartões</span>
-							<i class="fas fa-chevron-down submenu-toggle"></i>
-							<ul class="submenu">
-								<li>Cartão 1</li>
-								<li>Cartão 2</li>
-							</ul>
-						</li>
-						<li>
-							<i class="fas fa-bullseye"></i>
-							<span>Metas</span>
-						</li>
-						<li>
-							<i class="fas fa-bell"></i>
-							<span>Lembretes</span>
-						</li>
-						<li>
-							<i class="fas fa-info-circle"></i>
-							<span>Informações</span>
-						</li>
-						<li>
-							<i class="fas fa-cog"></i>
-							<span>Opções</span>
-						</li>
+						<a href="/">
+							<li>
+								<i class="fas fa-home"></i>
+								<span>Início</span>
+							</li>
+						</a>
+						<a href="usuario" class="redirect">
+							<li>
+								<i class="fas fa-chart-bar"></i>
+								<span>Usuários</span>
+							</li>
+						</a>
 					</ul>
 				</aside>
 				<main>
-					<div id="cards">
-						<div class="card">
-							<div class="titulo">Receita do Mês</div>
-							<div class="conteudo">
-								<span id="receita"> <h1>R$ +1024,00</h1> </span>
-								<strong> Menor Receita </strong>
-								<p id="menorReceita">Salário: R$ 387,00</p>
-								<strong>Maior Receita</strong>
-								<p id="maiorReceita">Auxílio: R$ 647,00</p>
-							</div>
-						</div>
-						<div class="card">
-							<div class="titulo">Despesa do Mês</div>
-							<div class="conteudo">
-								<span id="despesa"> <h1>R$ -763,00</h1> </span>
-								<strong> Menor Despesa </strong>
-								<p id="menorDespesa">Mercado: R$ 187,00</p>
-								<strong>Maior Despesa</strong>
-								<p id="maiorDespesa">Aluguel: R$ 850,00</p>
-							</div>
-						</div>
-						<div class="card">
-							<div class="titulo">Saldo</div>
-							<div class="conteudo">
-								<span id="saldo"> <h1>R$ +1535,00</h1> </span>
-								<i class="bi bi-currency-exchange"></i>
-							</div>
-						</div>
-						<div class="card">
-							<div class="titulo">Receitas vs Despesas</div>
-							<div class="conteudo">
-								<canvas id="graficoReceitasDespesas"></canvas>
-							</div>
-						</div>
-					</div>
+
+<div id="cards">
+  <div class="card">
+    <div class="titulo">Receita do Mês</div>
+    <div class="conteudo">
+      <span id="receita"><h1>R$ +0,00</h1></span>
+      <strong>Menor Receita</strong>
+      <p id="menorReceita">-</p>
+      <strong>Maior Receita</strong>
+      <p id="maiorReceita">-</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="titulo">Despesa do Mês</div>
+    <div class="conteudo">
+      <span id="despesa"><h1>R$ -0,00</h1></span>
+      <strong>Menor Despesa</strong>
+      <p id="menorDespesa">-</p>
+      <strong>Maior Despesa</strong>
+      <p id="maiorDespesa">-</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="titulo">Saldo</div>
+    <div class="conteudo">
+      <span id="saldo"><h1>R$ 0,00</h1></span>
+      <i class="bi bi-currency-exchange"></i>
+    </div>
+  </div>
+  <!-- <div class="card">
+    <div class="titulo">Receitas vs Despesas</div>
+    <div class="conteudo">
+      <canvas id="graficoReceitasDespesas"></canvas>
+    </div>
+  </div> -->
+</div>
+
 					<div id="acessoRapidoarea">
 						<div id="acessoRapido">
 							<span>Acesso Rápido</span>
 							<div id="botoes">
 								<button id="botaoReceita"><i class="bi bi-plus-circle"></i> Receita</button>
 								<button id="botaoDespesa"><i class="bi bi-dash-circle"></i> Despesa</button>
-								<button id="botaoCategoria"><i class="bi bi-flag"></i> Categoria</button>
-								<button id="botaoLembrete"><i class="bi bi-bell"></i> Lembrete</button>
+								<!-- <button id="botaoCategoria"><i class="bi bi-flag"></i> Categoria</button>
+								<button id="botaoLembrete"><i class="bi bi-bell"></i> Lembrete</button> -->
 							</div>
 						</div>
 					</div>

@@ -49,7 +49,7 @@ a{
 }
 
 #logo{
-    width: 40px;
+    width: 50px;
     height: 40px;
     margin-right: 20px;
 }
@@ -172,3 +172,7 @@ a{
     background: #e0e0e0;
 }
 
+.redirect {
+    display: inline-block;
+    text-decoration: none;
+}

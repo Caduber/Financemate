@@ -26,8 +26,6 @@ public class Usuario {
     
     // Getters e Setters
 
-    private int preferencia;
-
     public Long getId() {
         return id;
     }
@@ -60,11 +58,4 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public int getPreferencia() {
-        return preferencia;
-    }
-
-    public void setPreferencia(int preferencia) {
-        this.preferencia = preferencia;
-    }
 }
